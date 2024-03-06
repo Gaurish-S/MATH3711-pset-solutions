@@ -1,0 +1,130 @@
+\section{Problem set 1}      
+
+\subsection{Problem 1}
+1. Given the following equation in a group 
+\begin{align*}
+  x^{-1}yxz^{2} = 1
+.\end{align*}
+solve for \( y \).
+
+\begin{solution}
+
+  Let the group that these three elements \( x,y,z \) belong to be \( G \).
+ \begin{align*}
+  x^{-1} y x z^{2} &= 1 \\
+  x x^{-1} y x z^{2} &= x   \\
+  1_{G} y x z^{2} &= x   \\
+  1_{G} y x z^{2} z^{-2} &= x z^{-2}   \\
+  1 y x z^{2} z^{-2} &= x z^{-2}   \\
+  y x 1_{G} &= x z^{-2}   \\
+  y x x^{-1} &= x z^{-2} x^{-1}   \\
+  y x x^{-1} &= x z^{-2} x^{-1}   \\
+  y 1_{G} &= x z^{-2} x^{-1}   \\
+  y &= x z^{-2} x^{-1} 
+.\end{align*}
+\end{solution}
+
+Note: ask if need to explicitly state all these algebraic manipulations.
+Also clarify if need to be explicit with identity with group as subscript.
+
+\subsection{Problem 2}
+In any group \( G \), show that \( (g^{-1})^{-1}  = g\) for any \( g \in G \). Show that 
+for any \( m,n \in \mathbb{Z} \) that \( g^{m} g^{n} = g^{m + n} \) and \( (g^{m})^{n} = g^{mn} \).
+
+\begin{solution}
+
+  Let \( m,n \in \mathbb{Z}  \) then,
+ \begin{align*}
+   g^{m}g^{n} &= (g^{m})(g^{n}) \\
+    &= \underbrace{(gg\ldots g)}_{\text{\( m \) terms}} \underbrace{\left( gg\ldots g \right)}_{\text{\( n \) terms}} \\
+    &= \underbrace{gg\ldots g \: gg\ldots g}_{\text{\( m+n \) terms}} \\
+    &= g^{m+n}
+ .\end{align*} 
+ Hence, this is true for all \( m,n \in \mathbb{Z} \).
+
+ Now again let \( m,n \in \mathbb{Z} \), then,
+ \begin{align*}
+   (g^{m})^{n} &= \underbrace{g^{m} \ldots g^{m}}_{\text{\( n \) terms}}\\
+               &= \underbrace{\underbrace{\left( g\ldots g \right)}_{\text{\( m \) terms}} \ldots \underbrace{\left( g\ldots g \right)}_{\text{\( m \) terms}}}_{\text{\( n \) times}}  \\
+               &=  \underbrace{g\ldots g}_{\text{\( nm \) terms}} \\
+               &= g^{nm}\\
+               &= g^{mn} \\
+  .\end{align*}
+\end{solution}
+
+Now let \( g \in G \) then,
+\begin{align*}
+  g^{-1} g = 1
+.\end{align*}
+So, this is true for all \( g \).
+Hence, \( (g^{-1})^{-1} = g\) for all \( g \in G \).
+
+\subsection{Problem 3}
+Prove disprove or salvage if possible the following statement.
+Given subgroups \( J, H \le G \). The union \( H \cup J \) is a subgroup of \( G \).
+
+\begin{solution}
+  The union \( H \cup J \) is not necessarily a subgroup of \( G \).
+  We give a counter example to disprove this statement.
+
+  Consider the groups \( \mathbb{Z}/3 \) and \( \mathbb{Z}/4 \le \mathbb{Z}\) equipped with integer addition as the group binary operation. Now, \( 2 \in \mathbb{Z} \) and \( 3 \in 4 \). \( 2 \times 3 = 6 \notin \frac{\mathbb{Z}}{3} \cup \frac{\mathbb{Z}}{4}\).
+  Therefore this statement is false. However, we can salvage this statement
+  by considering the intersection \( H \cap J \) instead of the union. This is indeed a subgroup of \( G \).
+  Following is the proof.
+
+  \begin{proof}
+   Since, \( 1_{G} \in H\) and \( 1_{G} \in J \). \( 1_{G} \in H \cap  J \). Therefore, the identity element is in \( H \cap J \).
+
+  Now, let \( x, y \in H \cap J  \). This means \( x,y \in J \implies xy \in J \) by closure under multiplication
+  and \( x,y \in H \implies xy \in H \) by closure under multiplication. Hence \( xy \in H \cap J \).
+  This is true for all \(xy \in  H \cap J \). Hence \( H \cap J \) is closed under group multiplication.
+
+  Remains to prove closure under group inverse. Let \( x \in H \cap J \). Then \( x \in H \implies x^{-1} \in H \) and \( x \in J \implies x^{-1} \in  J\) due to closure under group inverse
+  of \( H \) and \( J \). Hence \( x^{-1} \in H \cap J \). Hence, this is true for all \( x \in H \cap J \).
+
+  We have proven closure under group multiplication and group inverse and also existence of identity. Hence 
+  by subgroup theorem \( H \cap J \le G\).
+  \end{proof}
+\end{solution}
+
+\subsection{Quesiton 4}
+Let \( G \) be a group and \( H \subseteq G\). Show that \( H \) is a subgroup iff it is
+non empty and for every \( h,j \in H \) we have \( hj^{-1} \in H \). This gives an
+alternate characterization for subgroups. (there is an analogue here for subspaces do you know it?).
+
+\begin{solution}
+ Lets prove the forwards implication i.e \( H \le G \implies H  \) is non empty and \( hj^{-1} \in H\).
+
+ Since \( H \) is a subgroup we know it contains an identity element so it must be nonempty.  
+
+ Now, let \( h,j \in H \). Since \( H \) is closed under inverses we know that \( j^{-1} \in H \).
+ Also, \( H \) is closed under group multiplication. Therefore, \( h j^{-1} \in H \).
+
+ Therefore, this is true for all \( h,j \in H  \). Hence for all \( h,j \in H \) we have \( hj^{-1} \in H \).
+
+ Now, we prove the reverse implication i.e \( H  \) is non empty and for all \( h,j \in H \) \( hj^{-1} \in H \implies H \le G \).
+
+ Since, \( H \) is non empty we know that there exists an element \( h \in H  \). We also know that \( h,j^{-1} \in H \) for all
+ \( h,j \in  H\). Hence, \( h h^{-1} \in H \). Therefore \( 1_{G} \in H \). Therefore,
+ \( H \) contains the identity element.
+ Note: Ask about this kind of variable naming. Is this too confusing perhaps ?.
+
+ Now, we show existence of inverse. Let \( h \in H \) and we know \( 1_{G} \in H \), \( 1_{G}h^{-1} \in H\). Hence \( h^{-1} \in H\).
+
+ Finally we show closure under group multiplication.
+ Now, let \( h, j \in H \). Therefore, by closure of inverse proven above \( j^{-1} \in H  \). Hence,
+ \( h(j^{-1})^{-1} \in H \implies hj \in H\). Therefore for all \(h,j \in H  \) we have \( hj \in H \).
+ Hence we have proven closure under group multiplication, group inverse and existence of identity.
+
+ Therefore, by subgroup theorem we have \( H \le G \).
+
+ Hence we have proven both implications and therefore the statement.
+
+ The vector space analogue is that \( V  \subseteq W \) is a vector subspace of \(W  \) with scalar field \( F \) equipped with vector addition (\( + \)) and scalar multiplication \( (*) \).
+ iff \( V \) is non empty and \( \forall \mathbf{x},\mathbf{y} \in V   \) and \( \lambda, \mu   \in F \) we have \(\lambda \mathbf{x} + \mu  \mathbf{y}  \in V\).
+ Note: ask if you were allowed to assume subgroup theorem here since I have.
+\end{solution}
+
+\subsection{Question 5}
+Let \( G \) be a group with group multiplication \( \mu : G \times  G \to  G\). We define a 
+new group multiplication by \(  \)
