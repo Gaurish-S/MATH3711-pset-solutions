@@ -172,5 +172,68 @@ Hence, \( G_{op} \) is a group by definition.
 \end{solution}
 
 \subsection{Question 6}
+Let \( GL_{n}\left( \mathbb{Z} \right) \) be the set of \( n \times n \) matrices \( M \) with integer entries such that \( M -1 \) exists and also
+has integer entries. Show that \( GL_{n}\left( \mathbb{Z} \right) \) forms a group when endowed with matrix multiplication.
 
+\begin{solution}
+ We know \(GL_{n}\left( \mathbb{R} \right)  \) is a group and that \( GL_{n}\left( \mathbb{Z} \right) \) is a subset of it. Therefore, we need to show
+ that it is a subgroup.
+ First we show closure under multiplication. Let \( A,B \in GL_{n}\left( \mathbb{Z} \right) \). Then, consider \( AB \).
+ Let \( \left( a \right)_{ij} \) denote the entry at the \( i \)th row and \( j \)th column of \( AB \). 
+ We know that this entry is going to be the dot product of the \( i \) row vector in \( A \) and
+ \( j \)th column vector in \( B \). And since both these vectors only have integer components.
+ The dot product is going to be an integer. Hence \( \left( a \right)_{ij} \in \mathbb{Z} \). This
+ is true for all entries \( a_{ij} \) where \( i \) is the row number and \( j \) is the column number of the entry.
+ Hence, \( AB \in GL_{n}\left( \mathbb{Z} \right)\). This is true for all \( A,B \in GL_{n}\left( \mathbb{Z} \right) \). Hence \( GL_{n}\left( \mathbb{Z} \right) \)
+ is closed under multiplication.
+
+ Now we prove closure under inverse. Let \( A \in GL_{n}\left( \mathbb{Z} \right) \). Then we know that 
+ Todo: not quite sure about inverse. Look up algorithm for finding inverse.
+
+ Now we show existence of identity. Since \( I_{n} \) only consists of \( 1  \) and 0 entries it is in \( GL_{n}\left( \mathbb{Z} \right) \).
+ 
+ Therefore we have proven existence of identity and closure under inverse and multiplication. 
+ Hence, by subgroup theorem \( GL_{n}\left( \mathbb{Z} \right) \) is a subgroup of \( GL_{n} \left( \mathbb{R} \right) \).
+\end{solution}
+
+\subsection{Question 7}
+7. In this question, we identify \( 1 \times  1 \) matrices with their unique entry so that \( GL_{n}\left( \mathbb{C} \right) \) gets
+identified with \( \mathbb{C}^{*} \) , the non-zero elements in \( \mathbb{C} \). Let \( \mu  \) be the subset of roots of unity of \( \mathbb{C}^{*} \) .
+(Recall that a root of unity is a complex number \( \zeta \) such that \( \zeta^{n} = 1 \) for some positive integer \( n \)).
+Show that, \( \mu  \) is a subgroup of \( \mathbb{C} \) . Show that the subset \( \mu n \) of \( n \)-th (not necessarily primitive)
+roots of unity is in turn a subgroup of \( \mu  \).
+
+\begin{solution}
+  We know 
+  \[ \mu  = \{e^{\frac{2k \pi i}{n} }\mid k,n \in \mathbb{Z}\}\]
+
+  We prove closure under group multiplication. 
+  Let \( x,y \in \mu  \) the \( x = e^{\frac{2h\pi i}{a}} \) for some \( h,a \in \mathbb{Z}\).
+  Similarly. \( y = e^{\frac{2j\pi i}{b}} \) for some \( j,b \in \mathbb{Z} \). Now,
+  \begin{align*}
+    xy &= e^{\frac{2h\pi i}{a} + \frac{2j\pi i}{b}} \\
+    &= e^{\frac{2hb\pi i + 2aj\pi i}{ab}} \\
+    &= e^{\frac{2\pi i \left( hb + aj \right)}{ab}} \\
+    &= e^{\frac{2\pi\left( hb + aj \right) i }{ab}} \in \mu 
+  \end{align*}
+  as \( ab \in \mathbb{Z} \) and \(  hb + aj \in \mathbb{Z} \). Since this is true for all \( x,y \in \mu  \) it is
+  closed under group multiplication.
+
+  Now we show closure under inverse. Let \( x \in \mu  \). Then
+  \( x = e^{\frac{2h \pi i}{a}} \) for some \( h, a \in \mathbb{Z} \). So,
+  \begin{align*}
+    x^{-1} &= (e^{\frac{2 h \pi i}{a}})^{-1} \\
+    &= e^{-\frac{2h \pi i}{a}} \\
+    &= e^{\frac{2(-h) \pi i}{a}} \in \mu 
+  .\end{align*}
+  Since this is true for all \( x \in \mu  \). \( \mu  \) is closed under group inverse.
+
+  Identity is in \( \mu  \) as \( 1  \) is a root of unity.
+
+  Since, we have closure under inverse, group multiplication and existence of identity. By subgroup theorem, \( \mu  \) is a subgroup.
+
+  The proof for \( nth \) roots being a subgroup is almost identical  just instead of \( a, b   \)    we have \( n \).
+\end{solution}
+
+\subsection{Question 8}
 
