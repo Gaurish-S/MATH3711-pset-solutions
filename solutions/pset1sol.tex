@@ -135,6 +135,42 @@ more complicated notation like \( g  *  g' \coloneqq  v(g, g' ), gg' \coloneqq  
 two group structures is \( g * g'  = g' g \).
 
 \begin{solution}
-  
+We show associatovity of the binary operation. 
+Let \( g, h, k \in G_{op} \). Then
+\begin{align*}
+  \left( g * h \right) * k = (hg) * k
+  = k(hg)
+  = khg
+  = \left(kh  \right)g
+  = g * \left(kh  \right)
+  = g * \left(h * k  \right)
+.\end{align*}
+Since, this is true for all \( g,h,k \in G_{op}  \) we have associativity.
+
+Now, we show existence of identity. We know \( 1_{G} \in G_{op} \). Let \( g \in G_{op} \), then 
+\( 1_{G} * g = g1_{G} = g \). Similarly \( g * 1_{G} = 1_{G}g = g \). This is true for all \( g \in G_{op} \) Therefore, 
+\( 1_{G} \) is also the identity of \( G_{op} \) and \( G_{opp} \) contains an identity element.
+
+
+Now, show closure under inverse. Let \( g \in G_{op}  \) then \( g \in  G    \) and \( g^{-1} \in G \) as \( G \) is closed under
+inverse being a group. So \( g^{-1} \in G_{op} \) (Note: kinda confusing notation beacuse this already 
+kinda implies it being an inverse do need something to denote its an inverse specificllay in G). 
+Now we need to show that this is an inverse in \( G_{op} \) as well.
+\begin{align*}
+   g * g^{-1} = g^{-1} g = 1_{G}
+.\end{align*}
+
+Similarly
+\begin{align*}
+   g^{-1} * g = gg^{-1} = 1_{G}
+.\end{align*}
+Therefore, \( g^{-1} \) is an inverse of \( g \) in \( G_{op} \) as well. This is true for all \( g \in G \).
+Hence, \( G_{op} \) is closed under inverse.
+
+Therefore, we have proven associativity, closure under group multiplication and group inverse for \( G_{op} \). 
+Hence, \( G_{op} \) is a group by definition.
 \end{solution}
+
+\subsection{Question 6}
+
 
