@@ -71,14 +71,41 @@ Note: Clarify notation not sure how to interpret \( f(x_{1},\ldots,x_{n}) \). My
 function outputs a polynomial, \( (x-x_1)\ldots(x-x_n) \).
 
 \subsection{Question 7}
+ We first show
+\( G \) is a disjoint union of its right cosets. Now, we know that
+for any \( H \le G \), the relation \( h \equiv g \iff  h \in gH   \) for all \( g,h \in G \).
+Is an equivalence relation with equivalence classes being left cosets of \( H \).
+Now, let \( G = G^{op} \), then for any \( H \le  G \) 
+\( h \equiv g \iff h \in g * H \) for all \( gH \) is an equivalence relation. 
+With equivalence classes being left cosets of \( G^{op} \). Hence, 
+the disjoint union of all the left cosets of \( G^{op} \) gives \( G^{op} \). However, 
+\( g* H = Hg \) for any \( g \in G \) and \( H \le G \). Therefore, any left coset
+is a right coset of \( G \). Hence the disjoint union of all the right cosets of 
+\( G \) gives \( G^{op} = G \).
+
 Let
-\( \iota: G \to G: g \mapsto g^{-1}   \) be the inverse map of \( G \). We first show 
-\( \iota \left( Hg \right) = g^{-1}H \).
+\( \iota: G \to G: g \mapsto g^{-1}   \) be the inverse map of \( G \). Now,
+let \( H \le G \) and \( g \in  G \). We want to show \( \iota \left( Hg \right) =  g^{-1}H\).
 
+Let \( x \in \iota \left( Hg \right) \). Hence, there is a \( y \in Hg \) such that
+\( \iota \left( y \right) = x \). \( y = hg \) for some \( h \in H \). So,
+\( x = \iota \left( y \right) = g^{-1} h \in g^{-1}H\).
+Since, this is true for all \( x \in \iota  \left( Hg \right) \). 
+We have, \( \iota \left( Hg  \right) \subseteq g^{-1}H \).
 
+Now we prove the reverse containment relation.
+Let \( x \in g^{-1}H \). Then there is a \( h \in H  \) such that, \( x = g^{-1} h \).
+We know, \( h^{-1}g \in Hg \). So, \( \iota \left( h^{-1}g \right) = g^{-1}h \), Hence
+\( g^{-1}h \in  \iota \left( Hg \right)\) and \( x = g^{-1}h \). So, 
+\( x \in \iota \left( Hg \right) \). Since, this is true for all \( x \in g^{-1}H \), 
+\( g^{-1} H \). Therefore we have shown both containment relations, \( g^{-1}H = \iota (Hg) \).
 
+We define \( \mu : H \setminus G \to G \setminus H: Hg \to \iota \left( Hg \right) = g^{-1}H\). This
+is in injection as for any input \( Hg \) since \( g^{-1}H = \iota \left( Hg \right) \) and \( \iota  \) is a bijection and so
+it is going to map only \( Hg \) to all elements in \( g^{-1}H \). It is clearly a surjection, since
+for any coset in the codomain \(gH\) we can find an input coset \( Hg^{-1} \) in the domain, where
+\( \mu \left( Hg^{-1} \right) = gH \). Hence, \( \mu  \) is a bijection between the set of left and right cosets.
+So, there is no left or right index of a group.
 
-
-
-
+\subsection{Question 8}
 
